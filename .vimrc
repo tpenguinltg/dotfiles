@@ -57,7 +57,6 @@ VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
 
-" add manpage plugin
 runtime! ftplugin/man.vim
 runtime! macros/matchit.vim
 
