@@ -44,6 +44,7 @@ VAMActivate LaTeX-Suite_aka_Vim-LaTeX
 VAMActivate Modeliner
 VAMActivate rainbow_parentheses
 VAMActivate Rename%1928
+VAMActivate repeat
 VAMActivate Scratch
 VAMActivate Solarized
 VAMActivate surround
