@@ -38,7 +38,6 @@ call SetupVAM()
 
 " activate plugins
 VAMActivate abolish
-VAMActivate Auto_Pairs
 VAMActivate AutoTag
 VAMActivate camelcasemotion
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
@@ -56,6 +55,7 @@ VAMActivate visual-increment
 VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
+VAMActivate github:tpenguinltg/vim-closing-brackets
 
 runtime! ftplugin/man.vim
 runtime! macros/matchit.vim
