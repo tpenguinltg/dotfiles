@@ -48,6 +48,7 @@ VAMActivate repeat
 VAMActivate Scratch
 VAMActivate Solarized
 VAMActivate surround
+VAMActivate Tabular
 VAMActivate vim-gitgutter
 "VAMActivate vimlatex
 VAMActivate vimproject
