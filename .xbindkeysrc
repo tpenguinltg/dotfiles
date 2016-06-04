@@ -1,0 +1,271 @@
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Increase volume
+"/usr/bin/amixer -q set Master 2+"
+  XF86AudioRaiseVolume
+
+#"/usr/bin/pamixer --increase 2"
+#  XF86AudioRaiseVolume
+
+# Increase volume
+"/usr/bin/amixer -q set Master 2+"
+  Mod4 + Prior
+
+#"/usr/bin/pamixer --increase 2"
+#  Mod4 + Prior
+
+# Increase headphone volume
+"/usr/bin/amixer -q set Headphone 2+"
+  Mod4+Alt + Prior
+
+# Increase speaker volume
+"/usr/bin/amixer -q set Speaker 2+"
+  Mod4+Control + Prior
+
+# Increase volume (fine)
+"/usr/bin/amixer -q set Master 1+"
+  Shift + XF86AudioRaiseVolume
+
+#"/usr/bin/pamixer --increase 2"
+#  Shift + XF86AudioRaiseVolume
+
+# Increase headphone volume
+"/usr/bin/amixer -q set Headphone 2+"
+  Alt + XF86AudioRaiseVolume
+
+# Increase headphone volume (fine)
+"/usr/bin/amixer -q set Headphone 1+"
+  Alt+Shift + XF86AudioRaiseVolume
+
+# Increase speaker volume
+"/usr/bin/amixer -q set Speaker 2+"
+  Control + XF86AudioRaiseVolume
+
+# Increase speaker volume (fine)
+"/usr/bin/amixer -q set Speaker 1+"
+  Control+Shift + XF86AudioRaiseVolume
+
+# Raise mic volume
+"/usr/bin/amixer -q set Capture 2+"
+  Mod5 + XF86AudioRaiseVolume
+
+# Raise mic volume (fine)
+"/usr/bin/amixer -q set Capture 2+"
+  Mod5 + XF86AudioRaiseVolume
+
+# Decrease volume
+"/usr/bin/amixer -q set Master 2-"
+  XF86AudioLowerVolume
+
+#"/usr/bin/pamixer --decrease 2"
+#  XF86AudioLowerVolume
+
+# Decrease volume
+"/usr/bin/amixer -q set Master 2-"
+  Mod4 + Next
+
+#"/usr/bin/pamixer --decrease 2"
+#  Mod4 + Next
+
+# Decrease speaker volume
+"/usr/bin/amixer -q set Speaker 2-"
+  Mod4+Control + Next
+
+# Decrease headphone volume
+"/usr/bin/amixer -q set Headphone 2-"
+  Mod4+Alt + Next
+
+# Decrease volume (fine)
+"/usr/bin/amixer -q set Master 1-"
+  Shift + XF86AudioLowerVolume
+
+# Decrease volume (fine)
+#"/usr/bin/pamixer --decrease 2"
+#  Shift + XF86AudioLowerVolume
+
+# Decrease headphone volume
+"/usr/bin/amixer -q set Headphone 2-"
+  Alt + XF86AudioLowerVolume
+
+# Decrease headphone volume (fine)
+"/usr/bin/amixer -q set Headphone 1-"
+  Alt+Shift + XF86AudioLowerVolume
+
+# Decrease speaker volume
+"/usr/bin/amixer -q set Speaker 2-"
+  Control + XF86AudioLowerVolume
+
+# Decrease speaker volume (fine)
+"/usr/bin/amixer -q set Speaker 1-"
+  Control+Shift + XF86AudioLowerVolume
+
+# Decrease mic volume
+"/usr/bin/amixer -q set Capture 2-"
+  Mod5 + XF86AudioLowerVolume
+
+# Decrease mic volume (fine)
+"/usr/bin/amixer -q set Capture 1-"
+  Shift+Mod5 + XF86AudioLowerVolume
+
+# Toggle mute
+"/usr/bin/amixer -q set Master toggle"
+  XF86AudioMute
+
+# Toggle headphone mute
+"/usr/bin/amixer -q set Headphone toggle"
+  Alt + XF86AudioMute
+
+# Toggle speaker mute
+"/usr/bin/amixer -q set Speaker toggle"
+  Control + XF86AudioMute
+
+#"/usr/bin/pamixer --toggle-mute"
+#  XF86AudioMute
+
+# Toggle mic mute
+"/usr/bin/amixer -q set Capture toggle"
+  XF86AudioMicMute
+
+#"/usr/bin/amixer -q -D pulse set Capture toggle"
+#  XF86AudioMute
+
+#"/usr/bin/pamixer --source alsa_input.pci-0000_00_1b.0.analog-stereo --toggle-mute"
+#  XF86AudioMicMute
+
+# Open volume control
+"kmix"
+  XF86WebCam
+
+# Open volume control
+"kmix"
+  Control+Mod4 + F6
+
+"TERM=linux /home/johann/bin/alsamixer"
+  Control + XF86WebCam
+
+"TERM=linux /home/johann/bin/alsamixer"
+  Shift+Control+Mod4 + F6
+
+# pavucontrol
+"/usr/bin/pavucontrol"
+  Alt + XF86WebCam
+
+#"/usr/bin/pavucontrol"
+#  Control+Mod4 + F6
+
+# JACK control
+"qjackctl"
+  Shift + XF86WebCam
+
+# Media Previous
+"/usr/bin/xdotool keyup F10 key --clearmodifiers XF86AudioPrev"
+  Control+Mod4 + F10
+
+# Media Play
+"/usr/bin/xdotool keyup F11 key --clearmodifiers XF86AudioPlay"
+  Control+Mod4 + F11
+
+# Media Next
+"/usr/bin/xdotool keyup F12 key --clearmodifiers XF86AudioNext"
+  Control+Mod4 + F12
+
+# Increase backlight brightness
+"/usr/bin/xbacklight -inc 4"
+  XF86MonBrightnessUp
+
+# Increase backlight brightness
+"/usr/bin/xbacklight -inc 4"
+  Control+Mod4 + F9
+
+# Max backlight brightness
+"/usr/bin/xbacklight -set 100"
+  Shift + XF86MonBrightnessUp
+
+# Decrease backight brightness
+"/usr/bin/xbacklight -dec 4"
+  XF86MonBrightnessDown
+
+# Decrease backight brightness
+"/usr/bin/xbacklight -dec 4"
+  Control+Mod4 + F8
+
+# Min backight brightness
+"/usr/bin/xbacklight -set 0"
+  Shift + XF86MonBrightnessDown
+
+# Increase color temperature
+"redshift-adjust +500"
+  Alt + XF86MonBrightnessUp
+
+# Increase color temperature (fine)
+"redshift-adjust +100"
+  Control+Alt + XF86MonBrightnessUp
+
+# Decrease color temperature
+"redshift-adjust -500"
+  Alt + XF86MonBrightnessDown
+
+# Decrease color temperature (fine)
+"redshift-adjust -100"
+  Control+Alt + XF86MonBrightnessDown
+
+# Turn off backlight
+"xset dpms force off"
+  XF86Launch1
+
+# Turn off backlight
+"sleep 1 && xset dpms force off"
+  Control+Mod4 + Pause
+
+# Lock and turn off backlight
+"xscreensaver-command -lock && sleep 1 && xset dpms force off"
+  Control + XF86Launch1
+
+# Invert screen colours
+"invert-screen"
+  Shift + XF86Launch1
+
+# Lock screen
+"/usr/bin/xscreensaver-command -lock"
+  XF86ScreenSaver
+
+# Take screenshot of current window
+#"screenshot-window"
+#  Alt + Print
+
+# Take screenshot of current window
+"screenshot-window"
+  Mod5 + Print
+
+# Take screenshot of region or window
+"screenshot -w \"\""
+  Control + Print
+
+# Show screenshot dialog
+"ksnapshot"
+  Control+Shift + Print
+
+"ksnapshot --current"
+  Control+Shift+Alt + Print
+
+# Simulate Menu key on T430 keyboard
+"xdotool keyup x key --clearmodifiers Menu"
+  Mod4 + x
+
+# Take screenshot
+"screenshot"
+  Print
+
+# Paste selection
+"/usr/bin/xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
+  Alt + Insert
+
+# Show display properties
+"/usr/bin/lxrandr"
+  XF86Display
+
+# Numlock
+"/usr/bin/xdotool key --clearmodifiers Num_Lock"
+  m:0x0 + c:248
