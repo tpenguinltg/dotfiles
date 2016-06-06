@@ -240,7 +240,7 @@
   Mod5 + Print
 
 # Take screenshot of region or window
-"screenshot -w \"\""
+"screenshot -w ''"
   Control + Print
 
 # Show screenshot dialog
