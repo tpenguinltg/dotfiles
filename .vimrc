@@ -40,6 +40,7 @@ call SetupVAM()
 VAMActivate abolish
 VAMActivate AutoTag
 VAMActivate camelcasemotion
+VAMActivate Closing_Brackets
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
 VAMActivate Modeliner
 VAMActivate rainbow_parentheses
@@ -57,7 +58,6 @@ VAMActivate visual-increment
 VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
-VAMActivate github:tpenguinltg/vim-closing-brackets
 
 runtime! ftplugin/man.vim
 runtime! macros/matchit.vim
