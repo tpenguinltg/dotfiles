@@ -116,6 +116,7 @@ autocmd FileType tex setlocal spell
 """ multiple windows
 """
 
+set noequalalways
 set splitright
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
