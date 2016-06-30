@@ -110,6 +110,8 @@ match OverLength /\%81v.*\%132v/
 highlight OverOverLength ctermbg=darkred guibg=LightRed
 match OverOverLength /\%133v.\+/
 
+autocmd FileType tex setlocal spell
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ multiple windows
 """
