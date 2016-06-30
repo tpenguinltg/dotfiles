@@ -50,6 +50,7 @@ VAMActivate Scratch
 VAMActivate Solarized
 VAMActivate surround
 VAMActivate Tabular
+VAMActivate The_NERD_Commenter
 VAMActivate vim-gitgutter
 "VAMActivate vimlatex
 VAMActivate vimproject
