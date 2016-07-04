@@ -39,6 +39,7 @@ call SetupVAM()
 " activate plugins
 VAMActivate abolish
 VAMActivate AutoTag
+VAMActivate BBCode
 VAMActivate camelcasemotion
 VAMActivate Closing_Brackets
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
