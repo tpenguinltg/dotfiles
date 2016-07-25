@@ -134,6 +134,10 @@ set splitright
 
 " enable mouse mode
 set mouse=a
+if &term =~ '^screen' || &term =~ '^xterm'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ GUI
