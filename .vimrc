@@ -240,6 +240,7 @@ set undodir=~/.vimtmp/undo,.,/var/tmp,/tmp
 
 " Vim-LaTeX compile to PDF
 let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='dvi,pdf'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ running make and jumping to errors
