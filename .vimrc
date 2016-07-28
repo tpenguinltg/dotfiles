@@ -144,7 +144,13 @@ endif
 """
 
 " highlight the line numbers grey
-highlight LineNr guibg=grey guifg=DarkRed
+highlight LineNr guibg=Gray guifg=DarkRed
+
+" vim-gitgutter sign column
+highlight GitGutterAdd guibg=#558855 guifg=White ctermfg=2
+highlight GitGutterChange guibg=#939355 guifg=White ctermfg=3
+highlight GitGutterDelete guibg=#aa6060 guifg=White ctermfg=1
+highlight GitGutterChangeDelete guibg=#9e7a5a guifg=White ctermfg=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ printing
