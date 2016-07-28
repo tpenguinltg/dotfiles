@@ -88,6 +88,9 @@ set tags+=./tags;
 """ displaying text
 """
 
+" Display as much of the last line as possible instead of '@'
+set display+=lastline
+
 set number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
