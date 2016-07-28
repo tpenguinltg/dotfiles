@@ -73,24 +73,27 @@ runtime! macros/matchit.vim
 command! CDC cd %:p:h
 command! LCDC lcd %:p:h
 
-" case-insensitive search...
+" ignore case when using a search pattern
 set ignorecase
-" ... unless the search term is mixed cased
+
+" override 'ignorecase' when pattern has upper case characters
 set smartcase
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ tags
 """
 
+" search for tags file in current directory and up
 set tags+=./tags;
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ displaying text
 """
 
-" Display as much of the last line as possible instead of '@'
+" display as much of the last line as possible instead of '@'
 set display+=lastline
 
+" show the line number for each line
 set number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -114,13 +117,17 @@ match OverLength /\%81v.*\%132v/
 highlight OverOverLength ctermbg=darkred guibg=LightRed
 match OverOverLength /\%133v.\+/
 
+" highlight spelling mistakes for TeX documents
 autocmd FileType tex setlocal spell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ multiple windows
 """
 
+" make all windows the same size when adding/removing windows
 set noequalalways
+
+" a new window is put right of the current one
 set splitright
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,7 +170,10 @@ highlight GitGutterChangeDelete guibg=#9e7a5a guifg=White ctermfg=1
 """ messages and info
 """
 
+" show (partial) command keys in the status line
 set showcmd
+"
+" show cursor position below each window
 set ruler
 
 " For vim files, :help is more useful than `man`
@@ -200,14 +210,17 @@ set backspace=indent,eol,start
 vnoremap > >gv
 vnoremap < <gv
 
-" use spaces instead of tabs
+" expand <Tab> to spaces in Insert mode
 set expandtab
 
 " copy the indent of the previous line
 set autoindent
 set copyindent
 
+" use 2 spaces for each step of (auto)indent
 set shiftwidth=2
+
+" inserting tabs inserts 4 spaces
 set softtabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -226,8 +239,10 @@ set softtabstop=4
 """ reading and writing files
 """
 
-" backup the files in ~/.vimtmp/bak
+" keep a backup after overwriting a file
 set backup
+
+" prefer to store backup files in ~/.vimtmp/bak
 set backupdir=~/.vimtmp/bak,.
 
 " copy a backup, not move
@@ -237,14 +252,14 @@ set backupcopy=yes
 """ the swap file
 """
 
-" store swp files in ~/.vimtmp/swp instead of current directory
+" prefer to store swp files in ~/.vimtmp/swp
 set dir=~/.vimtmp/swp,.,/var/tmp,/tmp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ command line editing
 """
 
-" store undo history in ~/.vimtmp/undo
+" prefer to store undo history in ~/.vimtmp/undo
 set undodir=~/.vimtmp/undo,.,/var/tmp,/tmp
 
 " command-line completion shows a list of matches
