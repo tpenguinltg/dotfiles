@@ -247,6 +247,9 @@ set dir=~/.vimtmp/swp,.,/var/tmp,/tmp
 " store undo history in ~/.vimtmp/undo
 set undodir=~/.vimtmp/undo,.,/var/tmp,/tmp
 
+" command-line completion shows a list of matches
+set wildmenu
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ executing external commands
 """
