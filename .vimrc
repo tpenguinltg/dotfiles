@@ -197,6 +197,8 @@ inoremap <c-w> <c-g>u<c-w>
 " make Y work like C and D
 nnoremap Y y$
 
+set omnifunc=syntaxcomplete#Complete
+
 set dictionary+=/usr/share/dict/words
 
 " delete newlines in insert mode (sane backspace)
