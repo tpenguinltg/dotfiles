@@ -93,10 +93,10 @@ wmiir write /rules <<!
 # Status Bar Info
 status() {
 
-    battery_status="$(acpi -b | sed 's/^.*: \(.*\)/\1/')"
-    master_volume="$(amixer get Master | tail -1 | head -1)"
-    headphone_volume="$(amixer get Headphone | tail -2 | head -1)"
-    speaker_volume="$(amixer get Speaker | tail -2 | head -1)"
+    battery_status=$(acpi -b | sed 's/^.*: \(.*\)/\1/')
+    master_volume=$(amixer get Master | tail -1 | head -1)
+    headphone_volume=$(amixer get Headphone | tail -2 | head -1)
+    speaker_volume=$(amixer get Speaker | tail -2 | head -1)
     
     # Get mute status
     echo "$master_volume" | grep off >/dev/null 2>/dev/null; master_mute=$?
@@ -104,25 +104,26 @@ status() {
     echo "$speaker_volume" | grep off >/dev/null 2>/dev/null; speaker_mute=$?
 
     # Extract volume percentages
-    master_volume="$(echo "$master_volume" | awk '{print $4}' | sed 's/\[\|\]//g')"
-    headphone_volume="$(echo "$headphone_volume" | awk '{print $5}' | sed 's/\[\|\]//g')"
-    speaker_volume="$(echo "$speaker_volume" | awk '{print $5}' | sed 's/\[\|\]//g')"
+    master_volume=$(echo "$master_volume" | awk '{print $4}' | sed 's/\[\|\]//g')
+    headphone_volume=$(echo "$headphone_volume" | awk '{print $5}' | sed 's/\[\|\]//g')
+    speaker_volume=$(echo "$speaker_volume" | awk '{print $5}' | sed 's/\[\|\]//g')
 
     # If muted, put percentage in parentheses
     [ $master_mute -eq 0 ] && master_volume="($master_volume)"
     [ $headphone_mute -eq 0 ] && headphone_volume="($headphone_volume)"
     [ $speaker_mute -eq 0 ] && speaker_volume="($speaker_volume)"
 
-    screen_brightness="$(awk 'BEGIN { rounded = sprintf("%.0f", '"$(xbacklight -get)"'); print rounded }')"
-    color_temperature="$(redshift-adjust -p)"
+    screen_brightness=$(awk 'BEGIN { rounded = sprintf("%.0f", '"$(xbacklight -get)"'); print rounded }')
+    color_temperature=$(redshift-adjust -p)
 
     #echo -n label "Dropbox: $(dropbox.py status &) | Battery: $(acpi -b | sed 's/^.*: \(.*\)/\1/') | Volume: $(volwheel -s|sed -r 's/.* ([-0-9]+%)$/\1/') | $(date)"
     #echo -n label "Battery: $(acpi -b | sed 's/^.*: \(.*\)/\1/') | Volume: $(amixer get Headphone | tail -2 | head -1 | awk '{print $5}' | sed 's/\[\|\]//g')/$(volwheel -s|sed -r 's/.* ([-0-9]+%)$/\1/') | $(date)"
-    echo -n label "Bat: $battery_status | Scr: ${color_temperature}K:$screen_brightness% | Vol: M:$master_volume H:$headphone_volume S:$speaker_volume | $(date)"
+    echo -n "label Bat: $battery_status | Scr: ${color_temperature}K:$screen_brightness% | Vol: M:$master_volume H:$headphone_volume S:$speaker_volume | $(date)"
 }
 dbstatus() {
-    echo -n label "Dropbox: $(dropbox.py status)"
-    #echo -n label "Dropbox: $(dropbox.py status | head -c -1 | sed ':a;N;$!ba;s/\n/, /g')"
+    echo -n "label Dropbox: "
+    dropbox.py status
+    #echo -n "label "Dropbox: $(dropbox.py status | head -c -1 | sed ':a;N;$!ba;s/\n/, /g')"
     #exit 0
 }
 
@@ -230,8 +231,9 @@ Action dbstatus
 
 	# while wmii is running
 	while pidof wmii >/dev/null; do
-		dbstatus | wmiir write /rbar/dbstatus
-		sleep 1
+		dropbox_text=$(dbstatus)
+                wmiir xwrite /rbar/dbstatus "$dropbox_text"
+		sleep 2
 	done
 
 # Key Bindings
