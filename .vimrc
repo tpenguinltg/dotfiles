@@ -275,6 +275,9 @@ set wildmenu
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
 
+" Use biber instead of bibtex
+let g:Tex_BibtexFlavor='biber'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ running make and jumping to errors
 """
