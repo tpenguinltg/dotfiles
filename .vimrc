@@ -245,7 +245,7 @@ set softtabstop=4
 set backup
 
 " prefer to store backup files in ~/.vimtmp/bak
-set backupdir=~/.vimtmp/bak,.
+set backupdir=~/.vimtmp/bak//,.
 
 " copy a backup, not move
 set backupcopy=yes
@@ -255,14 +255,14 @@ set backupcopy=yes
 """
 
 " prefer to store swp files in ~/.vimtmp/swp
-set dir=~/.vimtmp/swp,.,/var/tmp,/tmp
+set dir=~/.vimtmp/swp//,.,/var/tmp,/tmp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ command line editing
 """
 
 " prefer to store undo history in ~/.vimtmp/undo
-set undodir=~/.vimtmp/undo,.,/var/tmp,/tmp
+set undodir=~/.vimtmp/undo//,.,/var/tmp,/tmp
 
 " command-line completion shows a list of matches
 set wildmenu
