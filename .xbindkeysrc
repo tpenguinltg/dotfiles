@@ -262,9 +262,13 @@
 "/usr/bin/xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
   Alt + Insert
 
+# Toggle display
+"toggle-external-monitor"
+  XF86Display
+
 # Show display properties
 "/usr/bin/lxrandr"
-  XF86Display
+  Shift + XF86Display
 
 # Numlock
 "/usr/bin/xdotool key --clearmodifiers Num_Lock"
