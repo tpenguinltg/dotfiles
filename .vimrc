@@ -209,8 +209,8 @@ set backspace=indent,eol,start
 """
 
 " improved indenting (keeps selection)
-vnoremap > >gv
-vnoremap < <gv
+xnoremap > >gv
+xnoremap < <gv
 
 " expand <Tab> to spaces in Insert mode
 set expandtab
