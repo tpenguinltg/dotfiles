@@ -313,6 +313,8 @@ Key $MODKEY-Shift-t # Retag the selected client
 	wmiir xwrite /client/$(wi_selclient)/ctl tags $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
 Key $MODKEY-Shift-grave     # Retag selected client for all tags
 	wmiir xwrite /client/sel/ctl tags "/.*/"
+Key $MODKEY-Shift-minus     # Remove the selected client from the current workspace
+	wmiir xwrite /client/sel/ctl tags "-sel"
 Key $MODKEY-n	    # Move to the next tag
 	wmiir xwrite /ctl view $(wi_tags | wi_nexttag)
 Key $MODKEY-b	    # Move to the previous tag
