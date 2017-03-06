@@ -1,0 +1,16 @@
+# Vim
+[sS]ession.vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+.netrwhist
+*~
+tags
+
+# KDE
+.directory
+
+# Eclim
+workbench.xmi
+.classpath
+.project
+.settings
