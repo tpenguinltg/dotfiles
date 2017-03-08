@@ -1,7 +1,7 @@
 #!/bin/sh
 
 print_usage() {
-  cat <<EOF >&2
+  cat <<EOF
 Usage: ${0##*/}
        ${0##*/} -h
 Collect wmii clients on other displays to the first column of the first
