@@ -1,0 +1,32 @@
+#!/bin/sh
+
+print_usage() {
+  cat <<EOF >&2
+Usage: ${0##*/}
+       ${0##*/} -h
+Collect wmii clients on other displays to the first column of the first
+display.
+
+OPTIONS
+  -h    Show this help.
+EOF
+}
+
+while getopts h opt; do
+  case $opt in
+    h)
+      print_usage
+      exit 0
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+wmiir ls /tag | grep -v '^sel/$' | tr -d '/' |
+while read -r tag; do
+  wmiir cat /tag/$tag/index | grep '^[0-9]*:' | cut -d ' ' -f 2 |
+  while read -r client; do
+    wmiir xwrite /tag/$tag/ctl send $client 0:1
+  done
+done

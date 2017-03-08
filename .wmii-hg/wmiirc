@@ -269,6 +269,9 @@ Key $MODKEY-Shift-$DOWN   # Move selected client down
 Key $MODKEY-Shift-space   # Toggle selected client between floating and managed layers
 	wmiir xwrite /tag/sel/ctl send sel toggle
 
+Key $MODKEY-Shift-BackSpace # Collect windows on other displays to area 0:1
+	${WMII_CONFPATH%%:*}/collect-windows
+
 KeyGroup Client actions
 Key $MODKEY-f # Toggle selected client's fullsceen state
 	wmiir xwrite /client/sel/ctl Fullscreen toggle
