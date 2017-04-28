@@ -42,7 +42,10 @@ VAMActivate AutoTag
 VAMActivate BBCode
 VAMActivate camelcasemotion
 VAMActivate Closing_Brackets
+VAMActivate eunuch
+VAMActivate fugitive
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
+VAMActivate localrc
 VAMActivate Modeliner
 VAMActivate rainbow_parentheses
 VAMActivate Rename%1928
@@ -57,9 +60,11 @@ VAMActivate vim-gitgutter
 "VAMActivate vimlatex
 VAMActivate vimproject
 VAMActivate vim-signature
+VAMActivate vim-textobj-quote
 VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
+VAMActivate github:wesQ3/vim-windowswap
 
 " plugins obsoleted by v8.0
 if version < 800
