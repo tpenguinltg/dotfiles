@@ -57,10 +57,14 @@ VAMActivate vim-gitgutter
 "VAMActivate vimlatex
 VAMActivate vimproject
 VAMActivate vim-signature
-VAMActivate visual-increment
 VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
+
+" plugins obsoleted by v8.0
+if version < 800
+  VAMActivate visual-increment
+endif
 
 runtime! ftplugin/man.vim
 runtime! macros/matchit.vim
