@@ -53,7 +53,7 @@
 
 # Raise mic volume (fine)
 "/usr/bin/amixer -q set Capture 2+"
-  Mod5 + XF86AudioRaiseVolume
+  Shift+Mod5 + XF86AudioRaiseVolume
 
 # Decrease volume
 "/usr/bin/amixer -q set Master 2-"
