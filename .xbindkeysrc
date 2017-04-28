@@ -231,6 +231,10 @@
 "/usr/bin/xscreensaver-command -lock"
   XF86ScreenSaver
 
+# Toggle screensaver
+"toggle-screensaver"
+  Alt + XF86ScreenSaver
+
 # Take screenshot of current window
 #"screenshot-window"
 #  Alt + Print
