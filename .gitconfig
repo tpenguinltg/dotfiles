@@ -1,0 +1,26 @@
+# vim: set noet fenc=utf-8 ff=unix sts=0 sw=0 ts=8 :
+
+# define user and credentials in $XDG_CONFIG_HOME/git/config
+
+[credential]
+	helper = cache
+[alias]
+	pr = pull --rebase
+	sq = !git rebase --interactive $(git merge-base HEAD master)
+	amend = commit --amend --no-edit
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	gen-ignore = "!_gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; _gi"
+	init-commit = !git init && git commit --allow-empty -m \"Initial commit\" -m \"This commit intentionally left blank.\"
+[push]
+	default = simple
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	# http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[rebase]
+	stat = true
