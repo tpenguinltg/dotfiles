@@ -1,0 +1,21 @@
+set noloadplugins
+source ~/.vimrc
+runtime! plugin/filebrowser.vim
+runtime! plugin/NERD_tree.vim
+
+" AnsiEsc
+runtime! plugin/ConcealRetab.vim
+runtime! plugin/cecutil.vim
+runtime! autoload/AnsiEsc.vim
+runtime! plugin/AnsiEscPlugin.vim
+
+set nonumber
+set colorcolumn=
+highlight OverLength ctermbg=NONE ctermfg=NONE guibg=NONE
+highlight OverOverLength ctermbg=NONE ctermfg=NONE guibg=NONE
+set nocursorline
+set readonly
+set nomodifiable
+set wrapscan
+
+nnoremap <silent> <Esc><Esc> :noh<CR>
