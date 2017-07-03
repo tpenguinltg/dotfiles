@@ -38,6 +38,7 @@ call SetupVAM()
 
 " activate plugins
 VAMActivate abolish
+VAMActivate argumentative
 VAMActivate AutoTag
 VAMActivate BBCode
 VAMActivate camelcasemotion
