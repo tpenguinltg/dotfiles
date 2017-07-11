@@ -1,0 +1,75 @@
+alias ls='ls --color=tty'
+alias dir='dir --color=tty'
+alias quit='history -c&&exit'
+alias del='rm'
+alias symlink='ln -s'
+alias copy='cp'
+alias move='mv'
+alias ren='mv'
+# alias pause='read -n1 -s -p "Press any key to continue..." && echo'
+alias :q='echo This is not vi!&&sleep 1&&exit'
+
+aur-clone() {
+  git clone "https://aur.archlinux.org/$1.git"
+}
+
+aur-clone-edit() {
+  git clone "ssh://aur.archlinux.org/$1.git"
+}
+
+aur-mirror-clone() {
+  git clone "https://github.com/aur-archive/$1.git"
+}
+
+ssh() {
+  [[ -t 1 ]] && konsoleprofile ColorScheme=${KONSOLE_COLORSCHEME:-Solarized}
+  trap '[[ -t 1 ]] && konsoleprofile ColorScheme=Linux' RETURN
+  /usr/bin/ssh "$@"
+}
+
+alias grep="grep --color=auto"
+alias dmesg='dmesg --color'
+alias hibernate='systemctl hibernate'
+alias mousefix='sudo modprobe -r psmouse && sudo modprobe psmouse'
+alias mirror='wget -mk'
+alias df-h='df -h'
+alias dunnet="PWD=$HOME/Games emacs -batch -l dunnet"
+alias vdir='vdir --color=tty'
+alias md='mkdir'
+alias rd='rmdir'
+alias renew-ip='sudo ip addr flush wlp3s0 && sudo systemctl stop dhcpcd wpa_supplicant@wlp3s0 && sleep 5 && sudo systemctl start dhcpcd wpa_supplicant@wlp3s0'
+alias wine32='PREFIX=~/.wine32 wine'
+alias finch="finch -c ~/.finch"
+alias xbindkeys-restart='killall -HUP xbindkeys'
+alias hgrep='history | grep'
+alias mktodaydir='mkdir $(date +%Y%m%d)'
+alias junit='java org.junit.runner.JUnitCore'
+
+alias unsysrqr='sudo kbd_mode -s -C /dev/tty$(sudo fgconsole)'
+
+alias edit-crontab='crontab -e'
+
+alias hddtemp='sudo hddtemp /dev/sda'
+
+alias nyancat='telnet nyancat.dakko.us'
+alias extip='curl -s ipinfo.io | jq -r .ip'
+
+alias torify='torify '
+
+# sudo aliases
+# (this is probably a security risk)
+if [ -d "$HOME/bin/sudo.d" ]; then
+  # sudo.d contains absolute symlinks to executables
+  for f in "$HOME/bin/sudo.d"/*; do
+    [ -L "$f" ] && eval alias "${f##*/}"=\'sudo "$(readlink "$f")"\'
+  done
+fi
+
+eval "$(hub alias -s)"
+eval "$(thefuck --alias)"
+
+# must be last to catch all aliases
+which() {
+  (alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+export -f which
