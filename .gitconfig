@@ -10,6 +10,7 @@
 	amend = commit --amend --no-edit
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
+	ls-ignored = "!git ls-files -v | grep '^h' | cut -c 3-"
 	gen-ignore = "!_gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; _gi"
 	init-commit = !git init && git commit --allow-empty -m \"Initial commit\" -m \"This commit intentionally left blank.\"
 [push]
