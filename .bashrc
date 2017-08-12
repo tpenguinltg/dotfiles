@@ -45,19 +45,19 @@ else
 fi
 
 # define formatting
-COLOR_RED='\[\033[0;31m\]'
-COLOR_RED_BOLD='\[\033[1;31m\]'
-COLOR_GREEN='\[\033[0;32m\]'
-COLOR_GREEN_BOLD='\[\033[1;32m\]'
-COLOR_BLUE='\[\033[0;34m\]'
-COLOR_BLUE_BOLD='\[\033[1;34m\]'
-COLOR_CYAN='\[\033[0;36m\]'
-COLOR_CYAN_BOLD='\[\033[1;36m\]'
-COLOR_PURPLE='\[\033[0;35m\]'
-COLOR_PURPLE_BOLD='\[\033[1;35m\]'
-COLOR_YELLOW='\[\033[0;33m\]'
-COLOR_YELLOW_BOLD='\[\033[1;33m\]'
-FORMAT_RESET='\[\033[m\]'
+readonly COLOR_RED='\[\033[0;31m\]'
+readonly COLOR_RED_BOLD='\[\033[1;31m\]'
+readonly COLOR_GREEN='\[\033[0;32m\]'
+readonly COLOR_GREEN_BOLD='\[\033[1;32m\]'
+readonly COLOR_BLUE='\[\033[0;34m\]'
+readonly COLOR_BLUE_BOLD='\[\033[1;34m\]'
+readonly COLOR_CYAN='\[\033[0;36m\]'
+readonly COLOR_CYAN_BOLD='\[\033[1;36m\]'
+readonly COLOR_PURPLE='\[\033[0;35m\]'
+readonly COLOR_PURPLE_BOLD='\[\033[1;35m\]'
+readonly COLOR_YELLOW='\[\033[0;33m\]'
+readonly COLOR_YELLOW_BOLD='\[\033[1;33m\]'
+readonly FORMAT_RESET='\[\033[m\]'
 
 __set_ps1() {
   local LAST_EXIT=$?
