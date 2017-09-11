@@ -22,9 +22,11 @@ aur-mirror-clone() {
 }
 
 ssh() {
-  [[ -t 1 ]] && konsoleprofile ColorScheme=${KONSOLE_COLORSCHEME:-Solarized}
-  trap '[[ -t 1 ]] && konsoleprofile ColorScheme=Linux' RETURN
-  /usr/bin/ssh "$@"
+  (
+   [[ -t 1 ]] && konsoleprofile ColorScheme=${KONSOLE_COLORSCHEME:-Solarized}
+   trap '[[ -t 1 ]] && konsoleprofile ColorScheme=Linux' EXIT
+   /usr/bin/ssh "$@"
+  )
 }
 
 alias grep="grep --color=auto"
