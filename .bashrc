@@ -62,8 +62,9 @@ readonly FORMAT_RESET='\[\033[m\]'
 __set_ps1() {
   local LAST_EXIT=$?
   local LASTMS=$CURMS
+  local DIRS=$(dirs -v | tail -n 1 | awk '{ print $1 }')
   CURMS=$(curms)
-  PS1="${COLOR_GREEN}\n[\D{%FT%T%z}|\l/\u@${COLOR_PURPLE}\h${COLOR_GREEN}:${COLOR_CYAN}\w${gitprompt}${COLOR_GREEN}>!\!] #\#\$( ((\j)) && printf ' ${COLOR_PURPLE}&\j' )${COLOR_RED}$( ((LAST_EXIT)) && printf " ?${LAST_EXIT}")${COLOR_BLUE} +$(prettyms $((CURMS-LASTMS)))${COLOR_GREEN}\n\$${FORMAT_RESET} "
+  PS1="${COLOR_GREEN}\n[\D{%FT%T%z}|\l/\u@${COLOR_PURPLE}\h${COLOR_GREEN}:${COLOR_CYAN}\w${gitprompt}${COLOR_GREEN}>!\!] #\#$( ((DIRS)) && printf " ${COLOR_CYAN}\\\\${DIRS}")\$( ((\j)) && printf ' ${COLOR_PURPLE}&\j' )${COLOR_RED}$( ((LAST_EXIT)) && printf " ?${LAST_EXIT}")${COLOR_BLUE} +$(prettyms $((CURMS-LASTMS)))${COLOR_GREEN}\n\$${FORMAT_RESET} "
 }
 
 if command -v __git_ps1 >/dev/null; then
