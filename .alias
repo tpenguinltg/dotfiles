@@ -55,8 +55,6 @@ alias unsysrqr='sudo kbd_mode -s -C /dev/tty$(sudo fgconsole)'
 
 alias edit-crontab='crontab -e'
 
-alias hddtemp='sudo hddtemp /dev/sda'
-
 alias nyancat='telnet nyancat.dakko.us'
 alias extip='curl -s ipinfo.io | jq -r .ip'
 
