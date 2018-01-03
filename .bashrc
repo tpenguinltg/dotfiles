@@ -77,7 +77,7 @@ fi
 
 # set prompts if not in dumb terminal
 if [[ $TERM != "dumb" ]]; then
-  PROMPT_COMMAND=__set_ps1
+  PROMPT_COMMAND="__set_ps1;$PROMPT_COMMAND"
   PS2="${COLOR_GREEN}\a> ${FORMAT_RESET}"
   PS4="${COLOR_BLUE}[\$(printf '%3d' \$LINENO)] + ${FORMAT_RESET}"
 fi
