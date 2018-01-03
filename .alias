@@ -29,6 +29,10 @@ ssh() {
   )
 }
 
+mkchdir() {
+  mkdir "$@" && cd "$_"
+}
+
 alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
 alias hibernate='systemctl hibernate'
