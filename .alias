@@ -21,13 +21,11 @@ aur-mirror-clone() {
   git clone "https://github.com/aur-archive/$1.git"
 }
 
-ssh() {
-  (
+ssh() (
    [[ -t 1 ]] && konsoleprofile ColorScheme=${KONSOLE_COLORSCHEME:-Solarized}
    trap '[[ -t 1 ]] && konsoleprofile ColorScheme=Linux' EXIT
    command ssh "$@"
-  )
-}
+)
 
 mkchdir() {
   mkdir "$@" && cd "$_"
