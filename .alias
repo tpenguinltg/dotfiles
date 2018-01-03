@@ -65,8 +65,12 @@ alias torify='torify '
 if [ -d "$HOME/bin/sudo.d" ]; then
   # sudo.d contains absolute symlinks to executables
   for f in "$HOME/bin/sudo.d"/*; do
-    [ -L "$f" ] && eval alias "${f##*/}"=\'sudo "$(readlink "$f")"\'
+    if [ -L "$f" ]; then
+      __f_link="$(readlink "$f")"
+      [ -x "$__f_link" ] && alias "${f##*/}"="sudo $__f_link"
+    fi
   done
+  unset __f_link
 fi
 
 eval "$(hub alias -s)"
