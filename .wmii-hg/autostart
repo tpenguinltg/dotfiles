@@ -4,7 +4,7 @@
 
 echo $DISPLAY > ~/.DISPLAY # store $DISPLAY for graphical crontab programs
 lxpanel &
-#twmnd & # for libnotify # knotify is already started
+twmnd & # for libnotify
 
 # open terminal if not already open
 pidof "${WMII_TERM:-konsole}" || "${WMII_TERM:-konsole}" &
