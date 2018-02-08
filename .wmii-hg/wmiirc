@@ -157,7 +157,7 @@ Event NotUrgentTag
 	wmiir xwrite "/lbar/$@" label "$@"
 Event LeftBarClick LeftBarDND
 	shift
-	wmiir xwrite /ctl view "$@"
+	[ "$*" != '~selclient' ] && wmiir xwrite /ctl view "$@"
 Event Unresponsive
 	{
 		client=$1; shift
@@ -213,6 +213,17 @@ Action exec
 	wmiir xwrite /ctl exec "$@"
 Action rehash
 	wi_proglist $PATH >$progsfile
+Action selclient
+	set +xv
+	if wmiir remove /lbar/~selclient 2>/dev/null; then
+		sleep 2
+	fi
+	echo colors "$WMII_NORMCOLORS" | wmiir create /lbar/~selclient
+	echo label "$(wmiir cat /client/sel/label)" | wmiir write /lbar/~selclient
+	wmiir cat /event |
+	while grep -q ClientFocus; do
+		echo label "$(wmiir cat /client/sel/props | sed 's/^[^:]*://;s/\(.\{37\}\).\{4,\}$/\1.../')" | wmiir write /lbar/~selclient
+	done
 Action status
 	set +xv
 	if wmiir remove /rbar/status 2>/dev/null; then
@@ -400,6 +411,7 @@ xsetroot -solid "$WMII_BACKGROUND" &
 progsfile="$(wmiir namespace)/.proglist"
 action status &
 action dbstatus &
+action selclient &
 wi_proglist $PATH >$progsfile &
 
 # Setup Tag Bar
