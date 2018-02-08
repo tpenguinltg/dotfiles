@@ -1,19 +1,26 @@
 #!/bin/sh
 
+tags=
+
 print_usage() {
   cat <<EOF
-Usage: ${0##*/}
+Usage: ${0##*/} [-t]
        ${0##*/} -h
 Collect wmii clients on other displays to the first column of the first
 display.
 
 OPTIONS
+  -t    The tags on which to collect.
   -h    Show this help.
 EOF
 }
 
-while getopts h opt; do
+while getopts t:h opt; do
   case $opt in
+    t)
+      tags="${tags}${OPTARG}
+" # sic
+      ;;
     h)
       print_usage
       exit 0
@@ -23,10 +30,14 @@ done
 
 shift $((OPTIND - 1))
 
-wmiir ls /tag | grep -v '^sel/$' | tr -d '/' |
-while read -r tag; do
-  wmiir cat /tag/$tag/index | grep '^[0-9]*:' | cut -d ' ' -f 2 |
+if [ -n "$tags" ]; then
+  echo -n "$tags"
+else
+  wmiir ls /tag | grep -v '^sel/$' | tr -d '/'
+fi |
+while IFS= read -r tag; do
+  wmiir cat "/tag/$tag/index" | grep '^[0-9]*:' | cut -d ' ' -f 2 |
   while read -r client; do
-    wmiir xwrite /tag/$tag/ctl send $client 0:1
+    wmiir xwrite "/tag/$tag/ctl" send "$client" 0:1
   done
 done
