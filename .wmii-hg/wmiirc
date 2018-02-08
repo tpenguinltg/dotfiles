@@ -99,21 +99,21 @@ status() {
     speaker_volume=$(amixer get Speaker | tail -2 | head -1)
     
     # Get mute status
-    echo "$master_volume" | grep off >/dev/null 2>/dev/null; master_mute=$?
-    echo "$headphone_volume" | grep off >/dev/null 2>/dev/null; headphone_mute=$?
-    echo "$speaker_volume" | grep off >/dev/null 2>/dev/null; speaker_mute=$?
+    echo "$master_volume" | grep -q off; master_mute=$?
+    echo "$headphone_volume" | grep -q off; headphone_mute=$?
+    echo "$speaker_volume" | grep -q off; speaker_mute=$?
 
     # Extract volume percentages
-    master_volume=$(echo "$master_volume" | awk '{print $4}' | sed 's/\[\|\]//g')
-    headphone_volume=$(echo "$headphone_volume" | awk '{print $5}' | sed 's/\[\|\]//g')
-    speaker_volume=$(echo "$speaker_volume" | awk '{print $5}' | sed 's/\[\|\]//g')
+    master_volume=$(echo "$master_volume" | awk '{print $4}' | tr -d '[]')
+    headphone_volume=$(echo "$headphone_volume" | awk '{print $5}' | tr -d '[]')
+    speaker_volume=$(echo "$speaker_volume" | awk '{print $5}' | tr -d '[]')
 
     # If muted, put percentage in parentheses
     [ $master_mute -eq 0 ] && master_volume="($master_volume)"
     [ $headphone_mute -eq 0 ] && headphone_volume="($headphone_volume)"
     [ $speaker_mute -eq 0 ] && speaker_volume="($speaker_volume)"
 
-    screen_brightness=$(awk 'BEGIN { rounded = sprintf("%.0f", '"$(xbacklight -get)"'); print rounded }')
+    screen_brightness=$(printf '%.0f' "$(xbacklight -get)")
     color_temperature=$(redshift-adjust -p)
 
     #echo -n label "Dropbox: $(dropbox.py status &) | Battery: $(acpi -b | sed 's/^.*: \(.*\)/\1/') | Volume: $(volwheel -s|sed -r 's/.* ([-0-9]+%)$/\1/') | $(date)"
