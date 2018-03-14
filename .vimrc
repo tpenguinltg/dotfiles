@@ -309,7 +309,7 @@ set encoding=utf-8
 let g:ctrlp_map = '<F3>'
 
 """ Credits go to Doug Ireton for inspiring the layout of this .vimrc
-""" <http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/>
+""" <https://web.archive.org/web/20161129224221/http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/>
 """ See :options for details.
 
 " vim: set fdm=marker :
