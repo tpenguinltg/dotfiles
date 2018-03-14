@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" important
+""" important                                                     {{{1
 """
 
 " force vim behaviour
@@ -76,7 +76,7 @@ runtime! ftplugin/man.vim
 runtime! macros/matchit.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" moving around, searching and patterns
+""" moving around, searching and patterns                         {{{1
 """
 
 " CDC = Change to Directory of Current file
@@ -90,14 +90,14 @@ set ignorecase
 set smartcase
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" tags
+""" tags                                                          {{{1
 """
 
 " search for tags file in current directory and up
 set tags+=./tags;
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" displaying text
+""" displaying text                                               {{{1
 """
 
 " display as much of the last line as possible instead of '@'
@@ -107,7 +107,7 @@ set display+=lastline
 set number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" syntax, highlighting and spelling
+""" syntax, highlighting and spelling                             {{{1
 """
 
 syntax enable
@@ -131,7 +131,7 @@ match OverOverLength /\%133v.\+/
 autocmd FileType tex setlocal spell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" multiple windows
+""" multiple windows                                              {{{1
 """
 
 " make all windows the same size when adding/removing windows
@@ -141,15 +141,15 @@ set noequalalways
 set splitright
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" multiple tab pages
+""" multiple tab pages                                            {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" terminal
+""" terminal                                                      {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" using the mouse
+""" using the mouse                                               {{{1
 """
 
 " enable mouse mode
@@ -160,7 +160,7 @@ if &term =~ '^screen' || &term =~ '^xterm'
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" GUI
+""" GUI                                                           {{{1
 """
 
 " highlight the line numbers grey
@@ -173,11 +173,11 @@ highlight GitGutterDelete guibg=#aa6060 guifg=White ctermfg=1
 highlight GitGutterChangeDelete guibg=#9e7a5a guifg=White ctermfg=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" printing
+""" printing                                                      {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" messages and info
+""" messages and info                                             {{{1
 """
 
 " show (partial) command keys in the status line
@@ -190,14 +190,14 @@ set ruler
 autocmd FileType vim setlocal keywordprg=:help
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" selecting text
+""" selecting text                                                {{{1
 """
 
 " also use primary selection
 set clipboard=unnamed,autoselect
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" editing text
+""" editing text                                                  {{{1
 """
 
 " break undo sequence for destructive insert mode commands
@@ -215,7 +215,7 @@ set dictionary+=/usr/share/dict/words
 set backspace=indent,eol,start
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" tabs and indenting
+""" tabs and indenting                                            {{{1
 """
 
 " improved indenting (keeps selection)
@@ -236,19 +236,19 @@ set shiftwidth=2
 set softtabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" folding
+""" folding                                                       {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" diff mode
+""" diff mode                                                     {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" mapping
+""" mapping                                                       {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" reading and writing files
+""" reading and writing files                                     {{{1
 """
 
 " keep a backup after overwriting a file
@@ -261,14 +261,14 @@ set backupdir=~/.vimtmp/bak//,.
 set backupcopy=yes
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" the swap file
+""" the swap file                                                 {{{1
 """
 
 " prefer to store swp files in ~/.vimtmp/swp
 set dir=~/.vimtmp/swp//,.,/var/tmp,/tmp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" command line editing
+""" command line editing                                          {{{1
 """
 
 " prefer to store undo history in ~/.vimtmp/undo
@@ -278,7 +278,7 @@ set undodir=~/.vimtmp/undo//,.,/var/tmp,/tmp
 set wildmenu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" executing external commands
+""" executing external commands                                   {{{1
 """
 
 " Vim-LaTeX compile to PDF
@@ -289,20 +289,20 @@ let g:Tex_MultipleCompileFormats='dvi,pdf'
 let g:Tex_BibtexFlavor='biber'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" running make and jumping to errors
+""" running make and jumping to errors                            {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" language specific
+""" language specific                                             {{{1
 """
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" multi-byte characters
+""" multi-byte characters                                         {{{1
 """
 set encoding=utf-8
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" various
+""" various                                                       {{{1
 """
 
 " Use <F3> to invoke CtrlP instead of the default <C-p>
@@ -311,3 +311,5 @@ let g:ctrlp_map = '<F3>'
 """ Credits go to Doug Ireton for inspiring the layout of this .vimrc
 """ <http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/>
 """ See :options for details.
+
+" vim: set fdm=marker :
