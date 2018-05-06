@@ -53,6 +53,7 @@ VAMActivate Modeliner
 "VAMActivate Rainbow_Parenthesis
 "VAMActivate Rainbow_Parentheses_Improved
 VAMActivate Rename%1928
+VAMActivate racket
 VAMActivate repeat
 VAMActivate Scratch
 VAMActivate Solarized
