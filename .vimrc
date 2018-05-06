@@ -263,11 +263,15 @@ set softtabstop=4
 " keep a backup after overwriting a file
 set backup
 
-" prefer to store backup files in ~/.vimtmp/bak
-set backupdir=~/.vimtmp/bak//,.
+" patterns that specify for which files a backup is not made
+set backupskip+=/dev/shm/*
+set backupskip+=/scratch/*
 
 " copy a backup, not move
 set backupcopy=yes
+
+" prefer to store backup files in ~/.vimtmp/bak
+set backupdir=~/.vimtmp/bak//,.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ the swap file                                                 {{{1
