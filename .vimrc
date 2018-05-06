@@ -43,6 +43,7 @@ VAMActivate AutoTag
 VAMActivate BBCode
 VAMActivate camelcasemotion
 VAMActivate Closing_Brackets
+VAMActivate Emmet
 VAMActivate eunuch
 VAMActivate fugitive
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
@@ -323,6 +324,13 @@ let g:ctrlp_map = '<F3>'
 
 " For Rainbow_Parentheses_Improved
 let g:rainbow_active = 0
+
+" Emmet
+" activate only for HTML and XML, and only for normal mode
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key='<Leader>e'
+let g:user_emmet_install_global = 0
+autocmd FileType html,xml EmmetInstall
 
 """ Credits go to Doug Ireton for inspiring the layout of this .vimrc
 """ <https://web.archive.org/web/20161129224221/http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/>
