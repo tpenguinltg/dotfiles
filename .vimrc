@@ -197,8 +197,8 @@ autocmd FileType vim setlocal keywordprg=:help
 """ selecting text                                                {{{1
 """
 
-" also use primary selection
-set clipboard=unnamed,autoselect
+" don't automatically interact with the system clipboard
+set clipboard=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ editing text                                                  {{{1
