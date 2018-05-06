@@ -83,6 +83,10 @@ runtime! macros/matchit.vim
 command! CDC cd %:p:h
 command! LCDC lcd %:p:h
 
+" list of directory names used for file searching
+" <https://youtu.be/XA2WjJbmmoM>
+set path+=**
+
 " ignore case when using a search pattern
 set ignorecase
 
