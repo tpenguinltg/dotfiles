@@ -48,7 +48,9 @@ VAMActivate fugitive
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
 VAMActivate localrc
 VAMActivate Modeliner
-VAMActivate rainbow_parentheses
+"VAMActivate rainbow_parentheses
+"VAMActivate Rainbow_Parenthesis
+"VAMActivate Rainbow_Parentheses_Improved
 VAMActivate Rename%1928
 VAMActivate repeat
 VAMActivate Scratch
@@ -65,6 +67,7 @@ VAMActivate vim-textobj-quote
 VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
+VAMActivate github:junegunn/rainbow_parentheses.vim
 VAMActivate github:wesQ3/vim-windowswap
 
 " plugins obsoleted by v8.0
@@ -311,6 +314,9 @@ set encoding=utf-8
 
 " Use <F3> to invoke CtrlP instead of the default <C-p>
 let g:ctrlp_map = '<F3>'
+
+" For Rainbow_Parentheses_Improved
+let g:rainbow_active = 0
 
 """ Credits go to Doug Ireton for inspiring the layout of this .vimrc
 """ <https://web.archive.org/web/20161129224221/http://dougireton.com/blog/2013/02/23/layout-your-vimrc-like-a-boss/>
