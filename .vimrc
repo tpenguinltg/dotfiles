@@ -68,7 +68,9 @@ VAMActivate github:rhysd/committia.vim
 VAMActivate github:ctrlpvim/ctrlp.vim
 VAMActivate github:fidian/hexmode
 VAMActivate github:junegunn/rainbow_parentheses.vim
+VAMActivate github:robertmeta/nofrils
 VAMActivate github:wesQ3/vim-windowswap
+VAMActivate git:https://bitbucket.org/kisom/eink.vim.git
 
 " plugins obsoleted by v8.0
 if version < 800
