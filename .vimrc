@@ -138,8 +138,9 @@ match OverLength /\%81v.*\%132v/
 highlight OverOverLength ctermbg=darkred guibg=LightRed
 match OverOverLength /\%133v.\+/
 
-" highlight spelling mistakes for TeX documents
+" enable spell checking for text-based filetypes
 autocmd FileType tex setlocal spell
+autocmd FileType gitcommit setlocal spell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ multiple windows                                              {{{1
