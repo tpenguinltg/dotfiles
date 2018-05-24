@@ -29,3 +29,5 @@
 	keepBackup = false
 [rebase]
 	stat = true
+[branch]
+	autosetuprebase = always
