@@ -30,7 +30,8 @@ prettyms() {
 # source other files
 for f in \
   ~/.alias \
-  /usr/share/git/completion/git-prompt.sh
+  /usr/share/git/completion/git-prompt.sh \
+  ~/.bashrc.d/*.bash
 do
   test -s "$f" && . "$f" || true
 done
