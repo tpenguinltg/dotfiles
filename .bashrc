@@ -65,7 +65,9 @@ __set_ps1() {
   local LASTMS=$CURMS
   local DIRS=$(dirs -v | tail -n 1 | awk '{ print $1 }')
   CURMS=$(curms)
-  PS1="${COLOR_GREEN}\n[\D{%FT%T%z}|\l/\u@${COLOR_PURPLE}\h${COLOR_GREEN}:${COLOR_CYAN}\w${gitprompt}${COLOR_GREEN}>!\!] \${SHLVL}#\#$( ((DIRS)) && printf " ${COLOR_CYAN}\\\\${DIRS}")\$( ((\j)) && printf ' ${COLOR_PURPLE}&\j' )${COLOR_RED}$( ((LAST_EXIT)) && printf " ?${LAST_EXIT}")${COLOR_BLUE} +$(prettyms $((CURMS-LASTMS)))${COLOR_GREEN}\n\$${FORMAT_RESET} "
+  local main
+  if (( TORSH )); then main="$COLOR_PURPLE"; else main="$COLOR_GREEN"; fi
+  PS1="${main}\n[\D{%FT%T%z}|\l/\u@${COLOR_PURPLE}\h${main}:${COLOR_CYAN}\w${gitprompt}${main}>!\!] \${SHLVL}#\#$( ((DIRS)) && printf " ${COLOR_CYAN}\\\\${DIRS}")\$( ((\j)) && printf ' ${COLOR_PURPLE}&\j' )${COLOR_RED}$( ((LAST_EXIT)) && printf " ?${LAST_EXIT}")${COLOR_BLUE} +$(prettyms $((CURMS-LASTMS)))${main}\n\$${FORMAT_RESET} "
 }
 
 if command -v __git_ps1 >/dev/null; then
