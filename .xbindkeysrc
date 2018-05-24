@@ -263,7 +263,7 @@
   Print
 
 # Paste selection
-"/usr/bin/xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
+"/usr/bin/xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel | sed 's/\\\\/\\\\\\\\/g'`" 2>/dev/null"
   Alt + Insert
 
 # Toggle display
