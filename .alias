@@ -48,6 +48,7 @@ alias xbindkeys-restart='killall -HUP xbindkeys'
 alias hgrep='history | grep'
 alias mktodaydir='mkdir $(date +%Y%m%d)'
 alias junit='java org.junit.runner.JUnitCore'
+alias mpvc='mpv --vo=opengl --opengl-backend=drm'
 
 alias unsysrqr='sudo kbd_mode -s -C /dev/tty$(sudo fgconsole)'
 
