@@ -192,15 +192,20 @@ Event ClientMouseDown
 	wi_fnmenu Client $2 $1 &
 
 Menu LBar-3-Delete
-	tag=$1; clients=$(wmiir read "/tag/$tag/index" | awk '/[^#]/{print $2}')
-	for c in $clients; do
-		if [ "$tag" = "$(wmiir read /client/$c/tags)" ]
-		then wmiir xwrite /client/$c/ctl kill
-		else wmiir xwrite /client/$c/ctl tags -$tag
-		fi
-		[ "$tag" = "$(wi_seltag)" ] &&
-			wmiir xwrite /ctl view $(wi_tags | wi_nexttag)
-	done
+	tag=$1;
+	if [ "$tag" = '~selclient' ]; then
+		wmiir xwrite /client/sel/ctl kill
+	else
+		clients=$(wmiir read "/tag/$tag/index" | awk '/[^#]/{print $2}')
+		for c in $clients; do
+			if [ "$tag" = "$(wmiir read /client/$c/tags)" ]
+			then wmiir xwrite /client/$c/ctl kill
+			else wmiir xwrite /client/$c/ctl tags -$tag
+			fi
+			[ "$tag" = "$(wi_seltag)" ] &&
+				wmiir xwrite /ctl view $(wi_tags | wi_nexttag)
+		done
+	fi
 Event LeftBarMouseDown
 	wi_fnmenu LBar "$@" &
 
