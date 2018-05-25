@@ -74,6 +74,7 @@ wmiir write /rules <<!
 /Clementine.*/ -> tags=4+0
 /Pidgin.*/ -> tags=sel+chat+0
 /Skype.*/ -> tags=sel+chat+0
+/Discord.*/ -> tags=sel+chat+0
 /Konsole.*/ -> group=0 tags=sel+0
 /.*/ -> tags=sel+0
 !
