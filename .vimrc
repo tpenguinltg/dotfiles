@@ -136,7 +136,7 @@ match OverLength /\%81v.*\%132v/
 
 " highlight characters from column 133 onwards
 highlight OverOverLength ctermbg=darkred guibg=LightRed
-match OverOverLength /\%133v.\+/
+2match OverOverLength /\%133v.\+/
 
 " enable spell checking for text-based filetypes
 autocmd FileType tex setlocal spell
