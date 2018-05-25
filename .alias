@@ -50,6 +50,9 @@ alias mktodaydir='mkdir $(date +%Y%m%d)'
 alias junit='java org.junit.runner.JUnitCore'
 alias mpvc='mpv --vo=opengl --opengl-backend=drm'
 
+alias rled='rlwrap ed'
+alias at='rlwrap at'
+
 alias unsysrqr='sudo kbd_mode -s -C /dev/tty$(sudo fgconsole)'
 
 alias edit-crontab='crontab -e'
