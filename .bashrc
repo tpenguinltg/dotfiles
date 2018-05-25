@@ -75,7 +75,7 @@ if command -v __git_ps1 >/dev/null; then
   GIT_PS1_SHOWSTASHSTATE=auto
   GIT_PS1_SHOWUNTRACKEDFILES=auto
   GIT_PS1_SHOWUPSTREAM=auto
-  gitprompt='$(__git_ps1 "'"${COLOR_YELLOW}"' (%s)")'
+  gitprompt='$( [[ "$PWD" = "$HOME" ]] && export GIT_DIR=.dotfiles.git; __git_ps1 "'"${COLOR_YELLOW}"' (%s)" )'
 fi
 
 # set prompts if not in dumb terminal
