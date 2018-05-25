@@ -131,7 +131,7 @@ set cursorline
 set colorcolumn=70
 
 " highlight characters from column 81 onwards
-highlight OverLength ctermbg=darkblue guibg=LightBlue
+highlight OverLength ctermbg=darkyellow guibg=Pink
 match OverLength /\%81v.*\%132v/
 
 " highlight characters from column 133 onwards
