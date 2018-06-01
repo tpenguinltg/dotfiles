@@ -1,0 +1,5 @@
+#!/bin/sh
+wmiir ls /client |
+while read -r client; do
+  wmiir cat /client/${client}props | grep -qi "$1" && wmiir xwrite /client/${client}ctl "tags +$1"
+done
