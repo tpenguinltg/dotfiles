@@ -132,7 +132,7 @@ set colorcolumn=70
 
 " highlight characters from column 81 onwards
 highlight OverLength ctermbg=darkyellow guibg=Pink
-match OverLength /\%81v.*\%133v/
+match OverLength /\%81v.\{1,52}/
 
 " highlight characters from column 133 onwards
 highlight OverOverLength ctermbg=darkred guibg=LightRed
