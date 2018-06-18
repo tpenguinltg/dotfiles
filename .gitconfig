@@ -17,6 +17,7 @@
 	init-commit = !git init && git commit --allow-empty -m \"Initial commit\" -m \"This commit intentionally left blank.\"
 	push-new = "!_pn() { git push -u origin "$(git rev-parse --abbrev-ref HEAD)" "$@"; }; _pn"
 	push-lease = push --force-with-lease
+	fixup = commit --fixup
 [push]
 	default = simple
 [merge]
