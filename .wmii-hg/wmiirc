@@ -224,11 +224,12 @@ Action selclient
 	if wmiir remove /lbar/~selclient 2>/dev/null; then
 		sleep 2
 	fi
-	echo colors "$WMII_NORMCOLORS" | wmiir create /lbar/~selclient
-	echo label "$(wmiir cat /client/sel/label)" | wmiir write /lbar/~selclient
 	wmiir cat /event |
-	while grep -q ClientFocus; do
+	while
+		wmiir ls /lbar/~selclient >/dev/null 2>&1 || echo colors "$WMII_NORMCOLORS" | wmiir create /lbar/~selclient
 		echo label "$(wmiir cat /client/sel/props | sed 's/^[^:]*://;s/\(.\{37\}\).\{4,\}$/\1.../')" | wmiir write /lbar/~selclient
+		grep -q ClientFocus
+	do :
 	done
 Action status
 	set +xv
