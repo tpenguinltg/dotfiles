@@ -5,7 +5,7 @@
 [credential]
 	helper = cache
 [alias]
-	pr = pull --rebase
+	pulre = pull --rebase
 	sq = "!_sq() { git rebase --interactive --autosquash $(git merge-base HEAD "${1:-master}"); }; _sq"
 	amend = commit --amend --no-edit
 	ignore = update-index --assume-unchanged
