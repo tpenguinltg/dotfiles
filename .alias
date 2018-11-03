@@ -80,7 +80,7 @@ if [ -d "$HOME/bin/sudo.d" ]; then
 fi
 
 eval "$(hub alias -s)"
-eval "$(thefuck --alias)"
+#eval "$(thefuck --alias)"
 
 # must be last to catch all aliases
 which() {
