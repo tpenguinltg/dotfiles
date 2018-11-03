@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+shopt -s extglob globstar
+
 # current date in milliseconds
 curms() {
   date +%s%3N
