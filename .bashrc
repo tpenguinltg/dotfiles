@@ -39,6 +39,7 @@ do
 done
 
 export HISTCONTROL=ignorespace
+export HISTTIMEFORMAT=
 
 # Use gVim for $VISUAL if running in an X session
 if [[ -v DISPLAY ]]; then
