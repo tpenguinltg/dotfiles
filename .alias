@@ -31,6 +31,10 @@ mkchdir() {
   mkdir "$@" && cd "$_"
 }
 
+fork() {
+  "$@" & disown
+} >/dev/null 2>&1
+
 alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
 alias hibernate='systemctl hibernate'
