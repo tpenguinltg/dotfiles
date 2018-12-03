@@ -19,6 +19,7 @@
 	push-lease = push --force-with-lease
 	fixup = commit --fixup
 	stat = status --short --branch
+	graph = log --graph --oneline
 [push]
 	default = simple
 [merge]
