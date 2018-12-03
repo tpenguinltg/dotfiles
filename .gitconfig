@@ -18,6 +18,7 @@
 	push-new = "!_pn() { git push -u origin "$(git rev-parse --abbrev-ref HEAD)" "$@"; }; _pn"
 	push-lease = push --force-with-lease
 	fixup = commit --fixup
+	stat = status --short --branch
 [push]
 	default = simple
 [merge]
