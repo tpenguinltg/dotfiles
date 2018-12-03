@@ -47,6 +47,7 @@ histnum=5000
 wmiir write /colrules <<!
 /gimp/ -> 17+83+41
 /chat/ -> 20+80 # Contacts on left
+/^0$/ -> 100 # Even columns
 /^1$/ -> 75+25 # Chat windows to right
 /.*/ -> 62+38 # Golden Ratio
 !
