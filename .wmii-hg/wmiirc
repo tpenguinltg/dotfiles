@@ -331,18 +331,18 @@ Key $MODKEY-Control-t # Toggle all other key bindings
 
 KeyGroup Tag actions
 Key $MODKEY-t       # Change to another tag
-	wmiir xwrite /ctl view $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
+	wmiir xwrite /ctl view $(LANG=C wi_tags | grep -v '~selclient' | wimenu -h "${hist}.tags" -n 50) &
 Key $MODKEY-Shift-t # Retag the selected client
 	# Assumes left-to-right order of evaluation
-	wmiir xwrite /client/$(wi_selclient)/ctl tags $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
+	wmiir xwrite /client/$(wi_selclient)/ctl tags $(LANG=C wi_tags | grep -v '~selclient' | wimenu -h "${hist}.tags" -n 50) &
 Key $MODKEY-Shift-grave     # Retag selected client for all tags
 	wmiir xwrite /client/sel/ctl tags "/.*/"
 Key $MODKEY-Shift-minus     # Remove the selected client from the current workspace
 	wmiir xwrite /client/sel/ctl tags "-sel"
 Key $MODKEY-n	    # Move to the next tag
-	wmiir xwrite /ctl view $(wi_tags | wi_nexttag)
+	wmiir xwrite /ctl view $(LANG=C wi_tags | grep -v '~selclient' | wi_nexttag)
 Key $MODKEY-b	    # Move to the previous tag
-	wmiir xwrite /ctl view $(wi_tags | sort -r | wi_nexttag)
+	wmiir xwrite /ctl view $(LANG=C wi_tags | grep -v '~selclient' | LANG=C sort -r | wi_nexttag)
 !
 	for i in 0 1 2 3 4 5 6 7 8 9; do
 		wi_events <<!
