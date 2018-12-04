@@ -187,6 +187,9 @@ highlight GitGutterChange guibg=#939355 guifg=White ctermfg=3
 highlight GitGutterDelete guibg=#aa6060 guifg=White ctermfg=1
 highlight GitGutterChangeDelete guibg=#9e7a5a guifg=White ctermfg=1
 
+" Don't use ALT keys for menus.
+set winaltkeys=no
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ printing                                                      {{{1
 """
