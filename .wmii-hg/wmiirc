@@ -177,6 +177,9 @@ Event Notice
 	kill $xpid 2>/dev/null # Let's hope this isn't reused...
 	{ sleep $noticetimeout; wmiir xwrite $noticebar label; }&
 	xpid = $!
+Event ClientFocus
+	wmiir ls /lbar/~selclient >/dev/null 2>&1 || echo colors "$WMII_NORMCOLORS" | wmiir create /lbar/~selclient
+	echo 'label' "$(wmiir cat /client/${*}/props | sed 's/^[^:]*://;s/\(.\{37\}\).\{4,\}$/\1.../')" | wmiir write /lbar/~selclient
 
 # Menus
 #Menu Client-3-Delete
@@ -225,13 +228,8 @@ Action selclient
 	if wmiir remove /lbar/~selclient 2>/dev/null; then
 		sleep 2
 	fi
-	wmiir cat /event |
-	while
-		wmiir ls /lbar/~selclient >/dev/null 2>&1 || echo colors "$WMII_NORMCOLORS" | wmiir create /lbar/~selclient
-		echo label "$(wmiir cat /client/sel/props | sed 's/^[^:]*://;s/\(.\{37\}\).\{4,\}$/\1.../')" | wmiir write /lbar/~selclient
-		grep -q ClientFocus
-	do :
-	done
+	echo colors "$WMII_NORMCOLORS" | wmiir create /lbar/~selclient
+	echo 'label' "$(wmiir cat /client/${*}/props | sed 's/^[^:]*://;s/\(.\{37\}\).\{4,\}$/\1.../')" | wmiir write /lbar/~selclient
 Action status
 	set +xv
 	if wmiir remove /rbar/status 2>/dev/null; then
