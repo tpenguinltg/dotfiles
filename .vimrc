@@ -57,6 +57,7 @@ VAMActivate Modeliner
 VAMActivate Rename%1928
 VAMActivate racket
 VAMActivate repeat
+VAMActivate rsi
 VAMActivate Scratch
 VAMActivate Solarized
 VAMActivate surround
