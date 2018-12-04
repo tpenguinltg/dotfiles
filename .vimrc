@@ -48,6 +48,7 @@ VAMActivate Emmet
 VAMActivate eunuch
 VAMActivate fugitive
 VAMActivate LaTeX-Suite_aka_Vim-LaTeX
+VAMActivate less
 VAMActivate localrc
 VAMActivate Modeliner
 "VAMActivate rainbow_parentheses
