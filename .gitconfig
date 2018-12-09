@@ -18,6 +18,7 @@
 	push-new = push -u origin HEAD
 	push-lease = push --force-with-lease
 	fixup = commit --fixup
+	squash = commit --squash
 	stat = status --short --branch
 	graph = log --graph --oneline
 [push]
