@@ -1,0 +1,7 @@
+program_options:
+  tray: auto
+
+device_config:
+  # Passport COMPAT
+  - id_uuid: 57DA-1709
+    automount: false
