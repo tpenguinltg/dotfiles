@@ -95,7 +95,7 @@ wmiir write /rules <<!
 # Status Bar Info
 status() {
 
-    battery_status=$(acpi -b | sed 's/^.*: \(.*\)/\1/')
+    battery_status=$(acpi -b | sed '$!d; s/^.*: \(.*\)/\1/')
     master_volume=$(amixer get Master | tail -1 | head -1)
     headphone_volume=$(amixer get Headphone | tail -2 | head -1)
     speaker_volume=$(amixer get Speaker | tail -2 | head -1)
