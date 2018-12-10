@@ -53,6 +53,7 @@ alias hgrep='history | grep'
 alias mktodaydir='mkdir $(date +%Y%m%d)'
 alias junit='java org.junit.runner.JUnitCore'
 alias mpvc='mpv --vo=opengl --opengl-backend=drm'
+alias dotfiles='git --git-dir="${HOME}/.dotfiles" --work-tree="${HOME}"'
 
 alias rled='rlwrap ed'
 alias at='rlwrap at'
