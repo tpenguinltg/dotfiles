@@ -160,7 +160,7 @@ Plugin {
 Plugin {
   type=batt
   Config {
-    HideIfNoBattery=0
+    HideIfNoBattery=1
     AlarmCommand=notify-send --urgency=critical --expire-time=5000 --icon=battery-low "Low battery"
     AlarmTime=30
     BackgroundColor=black
@@ -171,6 +171,24 @@ Plugin {
     DischargingColor2=#ffee00
     Size=8
     ShowExtendedInformation=1
+    BatteryNumber=1
+  }
+}
+Plugin {
+  type=batt
+  Config {
+    HideIfNoBattery=1
+    AlarmCommand=notify-send --urgency=critical --expire-time=5000 --icon=battery-low "Low battery"
+    AlarmTime=30
+    BackgroundColor=black
+    BorderWidth=1
+    ChargingColor1=#33cc00
+    ChargingColor2=#33cc00
+    DischargingColor1=#ffee00
+    DischargingColor2=#ffee00
+    Size=8
+    ShowExtendedInformation=1
+    BatteryNumber=0
   }
 }
 Plugin {
