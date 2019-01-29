@@ -183,6 +183,10 @@
 "/usr/bin/xbacklight -set 100"
   Shift + XF86MonBrightnessUp
 
+# Increase backlight brightness (fine)
+"/usr/bin/xbacklight -inc 1"
+  Control + XF86MonBrightnessUp
+
 # Decrease backight brightness
 "/usr/bin/xbacklight -dec 4"
   XF86MonBrightnessDown
@@ -194,6 +198,10 @@
 # Min backight brightness
 "/usr/bin/xbacklight -set 0"
   Shift + XF86MonBrightnessDown
+
+# Decrease backight brightness (fine)
+"/usr/bin/xbacklight -dec 1"
+  Control + XF86MonBrightnessDown
 
 # Increase color temperature
 "redshift-adjust +500"
