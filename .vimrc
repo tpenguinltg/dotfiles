@@ -228,6 +228,9 @@ inoremap <c-w> <c-g>u<c-w>
 " make Y work like C and D
 nnoremap Y y$
 
+" where it makes sense, remove a comment leader when joining lines
+set formatoptions+=j
+
 set omnifunc=syntaxcomplete#Complete
 
 set dictionary+=/usr/share/dict/words
