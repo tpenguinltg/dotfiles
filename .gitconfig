@@ -27,7 +27,7 @@
 	tool = diffconflicts
 [mergetool "diffconflicts"]
 	# http://vim.wikia.com/wiki/A_better_Vimdiff_Git_mergetool
-	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	cmd = vim -c DiffConflicts "$MERGED" "$BASE" "$LOCAL" "$REMOTE"
 	trustExitCode = true
 [mergetool]
 	keepBackup = false
