@@ -67,6 +67,9 @@ alias extip='curl -s ipinfo.io | jq -r .ip'
 
 alias torify='torify '
 
+alias STOP='killall -STOP'
+alias CONT='killall -CONT'
+
 # sudo aliases
 # (this is probably a security risk)
 if [ -d "$HOME/bin/sudo.d" ]; then
