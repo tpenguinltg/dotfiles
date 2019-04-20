@@ -145,6 +145,8 @@ highlight OverOverLength ctermbg=darkred guibg=LightRed
 " enable spell checking for text-based filetypes
 autocmd FileType tex setlocal spell
 autocmd FileType gitcommit setlocal spell
+autocmd FileType html setlocal spell
+autocmd FileType markdown setlocal spell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ multiple windows                                              {{{1
