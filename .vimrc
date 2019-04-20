@@ -285,6 +285,9 @@ set backupcopy=yes
 " prefer to store backup files in ~/.vimtmp/bak
 set backupdir=~/.vimtmp/bak//,.
 
+" browse directory of current file
+nnoremap <leader>e :e %:p:h<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ the swap file                                                 {{{1
 """
