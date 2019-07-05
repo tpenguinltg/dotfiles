@@ -132,15 +132,7 @@ highlight CursorLine cterm=NONE ctermbg=17 guibg=lightcyan
 set cursorline
 
 " highlight column 70
-set colorcolumn=70
-
-" highlight characters from column 81 onwards
-highlight OverLength ctermbg=darkyellow guibg=Pink
-match OverLength /\%81v.\{1,52}/
-
-" highlight characters from column 133 onwards
-highlight OverOverLength ctermbg=darkred guibg=LightRed
-2match OverOverLength /\%133v.\+/
+set colorcolumn=70,80,132
 
 " enable spell checking for text-based filetypes
 autocmd FileType tex setlocal spell
