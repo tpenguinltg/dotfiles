@@ -230,6 +230,9 @@ set dictionary+=/usr/share/dict/words
 " delete newlines in insert mode (sane backspace)
 set backspace=indent,eol,start
 
+" don't use two spaces after '.' when joining a line
+set nojoinspaces
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ tabs and indenting                                            {{{1
 """
