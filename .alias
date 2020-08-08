@@ -36,6 +36,7 @@ fork() {
 } >/dev/null 2>&1
 
 alias grep="grep --color=auto"
+alias grepc="grep --color=always"
 alias dmesg='dmesg --color'
 alias hibernate='systemctl hibernate'
 alias mousefix='sudo modprobe -r psmouse && sudo modprobe psmouse'
