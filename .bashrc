@@ -38,6 +38,9 @@ do
   test -s "$f" && . "$f" || true
 done
 
+shopt -s histappend
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT=
 
